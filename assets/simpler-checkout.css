@@ -1,0 +1,296 @@
+.simpler-container {
+  clear: both;
+  flex-basis: 360px;
+}
+
+.simpler-container::before,
+.simpler-container::after {
+  display: block;
+  content: '';
+  flex-basis: 100%;
+  height: 0;
+}
+
+.simpler-wrap {
+  clear: both;
+  display: flex;
+  padding: 14px 0 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%
+}
+
+.simpler-wrap.simpler-marquee-wrap {
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	padding: 22px;
+	position: relative;
+  margin-bottom: 36px;
+}
+
+.simpler-marquee-top {
+	position: absolute;
+	top: -8px;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	font: 600 16px/1 Arial, sans-serif;
+	color: #080808;
+}
+
+.simpler-marquee-bottom {
+	position: absolute;
+	bottom: -8px;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	font: 400 14px/16px Arial, sans-serif;
+  height: 16px;
+	color: #aaa;
+}
+
+.simpler-marquee-top::before,
+.simpler-marquee-top::after,
+.simpler-marquee-bottom::before,
+.simpler-marquee-bottom::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid #eee;
+}
+
+.simpler-marquee-top::before,
+.simpler-marquee-bottom::before {
+	margin-right: .5em;
+}
+
+.simpler-marquee-top::after,
+.simpler-marquee-bottom::after {
+	margin-left: .5em;
+}
+
+.simpler-separator {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  font: 400 .85rem Arial, sans-serif;
+  text-transform: none;
+  letter-spacing: normal;
+  font-variant: normal;
+  text-rendering: geometricPrecision;
+  margin: 5px 0 15px;
+  color: #aaa;
+}
+
+.simpler-separator::before,
+.simpler-separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #eee;
+}
+
+.simpler-separator:not(:empty)::before {
+  margin-right: .5em;
+}
+
+.simpler-separator:not(:empty)::after {
+  margin-left: .5em;
+}
+
+button.simpler-checkout,
+button.simpler-checkout:hover,
+button.simpler-checkout:focus {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+  width: 100%;
+  height: 52px;
+  margin: 7px auto;
+  padding: 8px 10px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: #080808;
+  border-radius: 7px;
+  text-decoration: none !important;
+  transform: none;
+  cursor: pointer;
+}
+
+button.simpler-checkout::before,
+button.simpler-checkout:hover::before,
+button.simpler-checkout:focus::before,
+button.simpler-checkout::after,
+button.simpler-checkout:hover::after,
+button.simpler-checkout:focus::after {
+  content: none !important;
+}
+
+.simpler-card-icon {
+  display: inline;
+  fill: #fff;
+  position: relative;
+  margin-right: 7px;
+}
+
+.simpler-card-icon > svg {
+  vertical-align: middle;
+}
+
+.simpler-button-text {
+  font: 600 16px Arial, sans-serif;
+  text-rendering: geometricPrecision;
+  font-variant: normal;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #fff;
+}
+
+.simpler-logo {
+  position: absolute;
+  top: 0px;
+  right: 7px;
+  line-height: normal;
+  color: #fafafa;
+}
+
+.simpler-accepted-cards {
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #6d6d6d;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.simpler-accepted-cards > span {
+    margin-right: 5px;
+}
+
+.simpler-accepted-cards > img {
+    margin: 0 2px;
+}
+
+.simpler-marquee-wrap .simpler-accepted-cards {
+  margin-bottom: 0px;
+}
+
+.simpler-mini-cart .simpler-checkout,
+.simpler-mini-cart .simpler-checkout:hover,
+.simpler-mini-cart .simpler-checkout:focus {
+  height: 45px;
+  margin: 0 auto 7px;
+}
+
+.simpler-mini-cart .simpler-button-text {
+  font-size: 14px;
+}
+
+/** overlay */
+body.overlay-active {
+  overflow: hidden;
+}
+
+.simpler-overlay {
+  position: fixed;
+  z-index: 999999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(10, 10, 10, .75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.simpler-overlay-container {
+  text-align: center;
+  font: 400 16px Arial, sans-serif;
+  color: #fafafa;
+}
+
+.simpler-overlay-close {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform .5s ease-in-out
+}
+
+.simpler-overlay-close:hover {
+  transform: rotate(180deg)
+}
+
+.simpler-overlay-lead {
+  margin-bottom: 10px;
+}
+
+.simpler-overlay-notice {
+  font: 300 20px/1.5 Arial, sans-serif;
+  color: #fafafa;
+}
+
+.simpler-overlay-cta,
+.simpler-overlay-cta:link,
+.simpler-overlay-cta:target,
+.simpler-overlay-cta:active,
+.simpler-overlay-cta:hover,
+.simpler-overlay-cta:visited,
+.simpler-overlay-cta:focus {
+  display: inline;
+  font: 700 24px Arial, sans-serif;
+  background-color: transparent;
+  color: #fafafa;
+  text-decoration: underline;
+  outline: none;
+}
+
+/** RIBBON */
+
+.simpler-ribbon{
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 25px;
+  width: 40px;
+  padding: 1px 5px 7px;
+  font: 700 14px/1.25 Arial, sans-serif;
+  color: #fff;
+  border-radius: 0 0 0.15rem 0.15rem;
+  background: rgb(208,0,0);
+  /* background: linear-gradient(90deg, rgba(208,0,0,1) 0%, rgba(121,9,9,1) 11%, rgba(188,9,9,1) 100%); */
+  text-align: center;
+}
+
+.simpler-ribbon:after{
+  position:absolute;
+  content: '';
+  display: block;
+  border: 33px solid transparent;
+  border-bottom: 12px solid #080808;
+  right: -13px;
+  top: 2px;
+}
+
+.simpler-ribbon span {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.simpler-ribbon-addon {
+  display: block;
+  font-size: 12px;
+}
